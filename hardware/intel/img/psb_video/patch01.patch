@@ -2,7 +2,7 @@ diff --git a/src/Android.mk b/src/Android.mk
 index 3ec4397..676c640 100644
 --- a/src/Android.mk
 +++ b/src/Android.mk
-@@ -39,8 +39,7 @@ LOCAL_CLANG_CFLAGS += \
+@@ -28,8 +28,7 @@
  
  LOCAL_CFLAGS := \
      -DLINUX -DANDROID -g -Wall -Wno-unused \
@@ -12,7 +12,7 @@ index 3ec4397..676c640 100644
  
  LOCAL_C_INCLUDES := \
      $(call include-path-for, libhardware)/hardware \
-@@ -84,6 +83,9 @@ LOCAL_SRC_FILES := \
+@@ -72,6 +71,9 @@
      tng_jpegdec.c
  
  ifneq ($(filter $(TARGET_BOARD_PLATFORM),merrifield moorefield morganfield),)
@@ -22,7 +22,7 @@ index 3ec4397..676c640 100644
  LOCAL_SRC_FILES += \
      pnw_H263ES.c \
      pnw_H264ES.c \
-@@ -141,7 +143,24 @@ LOCAL_CFLAGS += -DPSBVIDEO_MRFL_VPP_ROTATE
+@@ -143,6 +145,22 @@
  endif
  endif
  
@@ -43,17 +43,14 @@ index 3ec4397..676c640 100644
 +LOCAL_SHARED_LIBRARIES += libpvr2d
 +
  else
-+
+ 
  LOCAL_CFLAGS += \
-     -DPSBVIDEO_VXD392 -DBAYTRAIL \
-     -DPSBVIDEO_MSVDX_DEC_TILING -DPSBVIDEO_MSVDX_EC
-@@ -152,7 +171,8 @@ LOCAL_SRC_FILES += android/psb_mds.cpp
+@@ -155,7 +173,7 @@
  LOCAL_CFLAGS += -DTARGET_HAS_MULTIPLE_DISPLAY
  LOCAL_SHARED_LIBRARIES += libmultidisplay
  endif
 -LOCAL_CFLAGS += -Werror
-+
 +#LOCAL_CFLAGS += -Werror
+ 
  LOCAL_MODULE_TAGS := optional
  LOCAL_MODULE := pvr_drv_video
- 
